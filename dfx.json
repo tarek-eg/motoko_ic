@@ -5,21 +5,16 @@
       "type": "motoko"
     },
     "motoko_ic_assets": {
-      "dependencies": [
-        "motoko_ic"
-      ],
+      "dependencies": ["motoko_ic"],
       "frontend": {
-        "entrypoint": "src/motoko_ic_assets/src/index.html"
+        "entrypoint": "src/motoko_ic_assets/index.html"
       },
-      "source": [
-        "src/motoko_ic_assets/assets",
-        "dist/motoko_ic_assets/"
-      ],
+      "source": ["src/motoko_ic_assets", "dist/motoko_ic_assets"],
       "type": "assets"
     }
   },
   "defaults": {
-    "build": {
+    "serve": {
       "packtool": ""
     }
   },
