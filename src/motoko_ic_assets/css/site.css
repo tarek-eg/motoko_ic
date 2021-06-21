@@ -46,9 +46,6 @@ pre.highlight code {
   border-radius: 4px;
 }
 
-code.language-motoko {
-  max-height: 70vh;
-}
 .content {
   padding-top: 1em;
   max-width: 76vw;

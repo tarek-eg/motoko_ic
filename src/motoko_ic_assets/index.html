@@ -31,7 +31,7 @@ Debug.print("Hello Motoko!");</code></pre>
       const meta_url = `https://data.jsdelivr.com/v1/package/gh/${repo}@${version}/flat`;
       const base_url = `https://cdn.jsdelivr.net/gh/${repo}@${version}`;
       const response = await fetch(meta_url);
-      const json = await response.json()
+      const json = await response.json();
       const promises = [];
       const fetchedFiles = [];
       for (const f of json.files) {
@@ -46,15 +46,18 @@ Debug.print("Hello Motoko!");</code></pre>
         }
       }
       Promise.all(promises).then(() => {
-        Motoko.addPackage(name, name + '/');
+        Motoko.addPackage(name, name + "/");
         changeCodeBlock(); // from run_repl.js
       });
     }
-    function loadBase() {
-      addPackage('base', 'dfinity/motoko-base', 'dfx-0.7.0-beta.2', 'src');
+    window.loadBase = function loadBase() {
+      addPackage("base", "dfinity/motoko-base", "dfx-0.7.0-beta.2", "src");
+      console.log("dfinity/motoko-base loaded");
     }
   </script>
-  <script async src="https://download.dfinity.systems/motoko/0.5.14/js/moc-interpreter-0.5.14.js" onload="loadBase()">
+  <script async src="https://download.dfinity.systems/motoko/0.5.15/js/moc-interpreter-0.5.15.js" onload="loadBase()">
+  </script>
+
   </script>
 </body>
 
